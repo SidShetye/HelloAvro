@@ -1,0 +1,28 @@
+/**
+* Hello Avro examples here
+* See http://avro.apache.org/docs/1.7.5/idl.html for more info on
+* how you can express your data in the IDL syntax
+*/
+
+@namespace("HelloAvro.DTO")
+
+protocol HelloAvro {
+	import idl "ProjectDTO.avdl";	  // We can define this elsewhere and import ...
+    
+    record EmployeeDTO {
+    
+        string Name;
+                        
+        int EmployeeId;
+        
+        array<int> Reportees;         // An array/list of things
+        
+        union { null, string } Notes; // This is declared optional/null-able
+        
+        array<ProjectDTO> ActiveProjects; // an array of a complex type
+        
+        bytes RawBytes;       // an array of bytes is actually a primitive type
+        
+        boolean StillWorksHere; 
+	}
+}

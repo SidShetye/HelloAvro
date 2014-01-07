@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "ProjectDTO",
+  "namespace" : "HelloAvro.DTO",
+  "fields" : [ {
+    "name" : "ProjectId",
+    "type" : "int"
+  }, {
+    "name" : "ProjectName",
+    "type" : "string"
+  } ]
+}

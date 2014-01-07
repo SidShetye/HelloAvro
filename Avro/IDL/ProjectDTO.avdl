@@ -1,0 +1,10 @@
+@namespace("HelloAvro.DTO")
+
+protocol HelloAvro {
+
+	record ProjectDTO {
+        int ProjectId;
+
+        string ProjectName;        
+	}
+}
