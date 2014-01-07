@@ -12,7 +12,7 @@ To run this sample application
 ## Key items ##
 
 1. Avro data structure(s) are defined in `Avro\IDL\*.avdl` files
-2. Running `code-gen.bat` compiled them into the C# class files
+2. Running `code-gen.bat` compiles them into the C# class files (the code-gen tools use Java, so just for this stage, you need the JRE or JDK)
 3. The main logic is in `SerializerAvro.cs`
 
 Enjoy!
