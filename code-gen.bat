@@ -1,4 +1,16 @@
 @echo off
+
+if [%1]==[] (
+	REM Manually called from command line, do nothing special ...
+	) else (
+	REM Being called from Visual studio, so change directory to project root
+	REM To run this batch file everytime visual studio builds this project
+	REM right click HelloAvro project => Properties => Go to "Build Events"
+	REM then to pre-build and enter the following (without quotes)
+	REM "$(ProjectDir)code-gen.bat $(ProjectDir)" 
+	cd "%1"
+)
+
 @echo Cleaning existing auto-gen'd files
 del /f /q Avro\Schema
 del /f /q Avro\DTO
