@@ -1,0 +1,96 @@
+{
+  "protocol" : "HelloAvroProtocol",
+  "namespace" : "HelloAvro.DTO",
+  "doc" : "Hello Avro examples here\r\n  See http://avro.apache.org/docs/1.7.5/idl.html for more info on\r\n  how you can express your data in the IDL syntax",
+  "types" : [ {
+    "type" : "record",
+    "name" : "ProjectDTO",
+    "fields" : [ {
+      "name" : "ProjectId",
+      "type" : "int"
+    }, {
+      "name" : "ProjectName",
+      "type" : "string"
+    } ]
+  }, {
+    "type" : "record",
+    "name" : "EmployeeDTO",
+    "fields" : [ {
+      "name" : "Name",
+      "type" : "string"
+    }, {
+      "name" : "EmployeeId",
+      "type" : "int"
+    }, {
+      "name" : "Reportees",
+      "type" : {
+        "type" : "array",
+        "items" : "int"
+      }
+    }, {
+      "name" : "Notes",
+      "type" : [ "null", "string" ]
+    }, {
+      "name" : "ActiveProjects",
+      "type" : {
+        "type" : "array",
+        "items" : "ProjectDTO"
+      }
+    }, {
+      "name" : "RawBytes",
+      "type" : "bytes"
+    }, {
+      "name" : "StillWorksHere",
+      "type" : "boolean"
+    } ]
+  }, {
+    "type" : "error",
+    "name" : "ServerError",
+    "fields" : [ {
+      "name" : "message",
+      "type" : "string"
+    } ]
+  } ],
+  "messages" : {
+    "TransformName" : {
+      "request" : [ {
+        "name" : "employee",
+        "type" : "EmployeeDTO"
+      } ],
+      "response" : "string"
+    },
+    "hello" : {
+      "request" : [ {
+        "name" : "name",
+        "type" : "string"
+      } ],
+      "response" : "string"
+    },
+    "add" : {
+      "request" : [ {
+        "name" : "arg1",
+        "type" : "int"
+      }, {
+        "name" : "arg2",
+        "type" : "int"
+      } ],
+      "response" : "int"
+    },
+    "divide" : {
+      "request" : [ {
+        "name" : "arg1",
+        "type" : "int"
+      }, {
+        "name" : "arg2",
+        "type" : "int"
+      } ],
+      "response" : "int",
+      "errors" : [ "ServerError" ]
+    },
+    "heartbeat" : {
+      "request" : [ ],
+      "response" : "null",
+      "one-way" : true
+    }
+  }
+}
