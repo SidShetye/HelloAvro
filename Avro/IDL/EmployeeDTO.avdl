@@ -6,7 +6,7 @@
 
 @namespace("HelloAvro.DTO")
 
-protocol HelloAvro {
+protocol HelloAvroProtocol {
 	import idl "ProjectDTO.avdl";	  // We can define this elsewhere and import ...
     
     record EmployeeDTO {

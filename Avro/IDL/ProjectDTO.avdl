@@ -1,6 +1,6 @@
 @namespace("HelloAvro.DTO")
 
-protocol HelloAvro {
+protocol HelloAvroProtocol {
 
 	record ProjectDTO {
         int ProjectId;
