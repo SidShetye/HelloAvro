@@ -1,7 +1,7 @@
 Hello Avro
 =========
 
-A sample app showing how to use the awesome Apache Avro serializer.
+A sample app showing how to use the awesome Apache Avro serializer as well as the Avro RPC in action. The Avro RPC uses the Avro Serializer underneath but also allows quick and easy client side execution of server methods i.e. RPC. The RPC parameters are passed over the network as Avro serialized objects.
 
 To run this sample application
 

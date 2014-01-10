@@ -37,6 +37,12 @@
     <Reference Include="Avro">
       <HintPath>Avro\Lib\Avro.dll</HintPath>
     </Reference>
+    <Reference Include="Avro.ipc">
+      <HintPath>Avro\Lib\Avro.ipc.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>Avro\Lib\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -49,11 +55,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client.cs" />
+    <Compile Include="ClientServerDemo.cs" />
+    <Compile Include="SerializationDemo.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\HelloAvroProtocol.cs" />
+    <Compile Include="DTO\HelloAvroProtocolCallback.cs" />
     <Compile Include="DTO\ProjectDTO.cs" />
+    <Compile Include="DTO\ServerError.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SerializerAvro.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="Helper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -65,7 +79,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>$(ProjectDir)code-gen.bat $(ProjectDir)</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
