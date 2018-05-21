@@ -36,7 +36,6 @@ namespace HelloAvro
             if (origJson.Equals(regenJson))
                 Console.WriteLine("Success. Object through the serialize=>deserialize round trip are identical.");
             else
-
                 Console.WriteLine("FAILED! We lost data during the serialize=>deserialize round trip");
 
             //Console.WriteLine(Environment.NewLine + "Press any key to exit ...");
